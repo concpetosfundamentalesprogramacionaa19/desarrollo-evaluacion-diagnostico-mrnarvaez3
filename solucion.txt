@@ -1,0 +1,49 @@
+Algoritmo automoviles
+	
+	//Ingreso de datos de cada vehiculo
+	escribir "porfavor ingrese el numero de autos que desea importar"
+	leer x
+	dimension autos[x]
+	Dimension marca[x]
+	dimension origen[x]
+	dimension costo[x]
+	dimension impuesto[x]
+	prec_venta= 0
+	para i=1 hasta x con paso 1 hacer  
+		escribir "Ingrese la marca del auto " i 
+		leer marca[i]
+		escribir "Ingrese el origen del auto " i
+		leer origen[i]
+		si origen[i]= Argentina entonces
+			impuesto[i]= 0.20*costo[i]
+			arg=arg+1
+		sino 
+			impuesto[i]= 0.40*costo[i]
+			
+		FinSi
+		si origen[i]= Colombia Entonces
+			impuesto[i]= 0.25*costo[i]
+			col= col+1
+		sino 
+			impuesto[i]= 0.40*costo[i]
+			
+		FinSi
+		si origen[i]= Chile Entonces
+			impuesto[i]= 0.30*costo[i]
+			chi=chi+1
+		sino 
+			impuesto[i]= 0.40*costo[i]
+		FinSi
+		escribir " Ingrese el costo del auto " i
+		leer costo[i]
+		prec_venta= costo[i]+impuesto[i]
+		impuestos_total= impuesto[i]+ impuestos_total
+	FinPara
+	
+	escribir " El total de autos por importar es: " x
+	escribir " El total de impuestos generados es: " impuestos_total
+	escribir" El total de los precios de venta de los autos es" prec_venta
+	escribir "argentina: " arg
+	escribir "colombia: " col
+	escribir " chile: " chi 
+FinAlgoritmo
